@@ -1,0 +1,11 @@
+function htmlspecialchars(formData) {
+    const formArray = formData.split('');
+    for (let i = 0; i < formArray.length; i++) {
+        formArray[i] === '<' ? formArray.splice(i, 1, '&lt;') : formArray[i];
+        formArray[i] === '>' ? formArray.splice(i, 1, '&gt;') : formArray[i];
+        formArray[i] === '"' ? formArray.splice(i, 1, '&quot;') : formArray[i];
+        formArray[i] === '&' ? formArray.splice(i, 1, '&amp;') : formArray[i];
+    }
+    // return formArray.join('');
+    console.log(formArray.join(''));
+}
