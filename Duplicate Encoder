@@ -1,0 +1,20 @@
+function duplicateEncode(word) {
+    const wordArray = word.toLowerCase().split("");
+    let result = {};
+    let resultString = [];
+    wordArray.forEach(x => {
+        result[x] = (result[x] || 0) + 1;
+    });
+    const resultArray = Object.entries(result);
+    for (i = 0; i < wordArray.length; i++) {
+        for (j = 0; j < resultArray.length; j++) {
+            if (wordArray[i] === resultArray[j][0])
+                if (resultArray[j][1] > 1) {
+                    resultString.push(")")
+                } else {
+                    resultString.push("(")
+                }
+        }
+    }
+    return resultString.join("")
+}
