@@ -1,0 +1,12 @@
+function isValidWalk(walk) {
+    let result = {};
+
+    if (walk.length !== 10) {
+        return false
+    } else {
+        walk.forEach(x => {
+            result[x] = (result[x] || 0) + 1;
+        })
+        return result.n === result.s && result.e === result.w ? true : false;
+    }
+}
