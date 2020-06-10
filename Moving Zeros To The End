@@ -1,0 +1,12 @@
+var moveZeros = function (arr) {
+    let result = {};
+    let arrArray = [];
+    arr.forEach(e => {
+        result[e] = (result[e] || 0) + 1;
+    });
+    arrArray = arr.filter(item => item !== 0)
+    for (i = 0; i < result["0"]; i++) {
+        arrArray.push(0)
+    }
+    return arrArray;
+}
