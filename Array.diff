@@ -1,0 +1,29 @@
+function arrayDiff(a, b) {
+    let aArray = a;
+    let bArray = b;
+    
+    if (aArray.length < 1 || bArray.length < 1) {
+        return a;
+    } else {
+        for (let i = 0; i < bArray.length; i++) {
+            aArray = aArray.filter(cur => cur !== bArray[i])
+        }
+        return aArray;
+    }
+}
+
+// lub
+
+function arrayDiff(a, b) {
+    let aArray = a;
+    let bArray = b;
+
+    if (aArray.length < 1 || bArray.length < 1) {
+        return a;
+    } else {
+        bArray.forEach(e => {
+            aArray = aArray.filter(cur => cur !== e)
+        })
+    }
+    return aArray;
+}
