@@ -1,0 +1,17 @@
+function positiveSum(arr) {
+    let ar = arr;
+    let amount;
+    if (!arr.length) {
+        return 0;
+    } else {
+        ar = arr.filter(item => item > 0)
+        if (!ar.length) {
+            return 0
+        } else {
+            amount = ar.reduce((a, b) => {
+                return a + b;
+            });
+        }
+        return amount;
+    }
+}
