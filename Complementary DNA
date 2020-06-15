@@ -1,0 +1,15 @@
+function DNAStrand(dna){
+    let dnaArray = dna.split("");
+    dnaArray.forEach((item, index) =>{
+        if (item === "A"){
+            dnaArray[index] = "T";
+        } else if (item === "T"){
+            dnaArray[index] = "A";
+        } else if (item === "C"){
+            dnaArray[index] = "G";
+        } else if (item === "G"){
+            dnaArray[index] = "C";
+        }
+    })
+    return dnaArray.join("");
+  }
