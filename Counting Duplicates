@@ -1,0 +1,13 @@
+function duplicateCount(text) {
+    let result = {};
+    let resultArray = [];
+    let count = 0;
+    text.toLowerCase().split("").forEach(x => {
+        result[x] = (result[x] || 0) + 1;
+    })
+    resultArray = Object.entries(result);
+    for (let i = 0; i < resultArray.length; i++) {
+        resultArray[i][1] > 1 ? count++ : count;
+    }
+    return count;
+}
