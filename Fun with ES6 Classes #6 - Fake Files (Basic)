@@ -1,0 +1,43 @@
+class File {
+    constructor(fullName, contents) {
+        this._fullName = fullName;
+        this._contents = contents;
+
+        this._filename = fullName.substr(0, fullName.lastIndexOf("."));
+        this._extension = fullName.substr(fullName.lastIndexOf(".") + 1);
+        this._getsIndex = 0;
+        this._getcIndex = 0;
+    }
+    get fullName() {
+        return this._fullName;
+    }
+    set fullName(value) {
+        return;
+    }
+    get filename() {
+        return this._filename;
+    }
+    set filename(value) {
+        return;
+    }
+    get extension() {
+        return this._extension;
+    }
+    set extension(value) {
+        return;
+    }
+
+    getContents() {
+        return this._contents;
+    }
+    write(str) {
+        return this._contents === "" ? this._contents = str : this._contents = `${this._contents}\n${str}`;
+    }
+    gets() {
+        return this._contents.split("\n")[this._getsIndex++]
+    }
+    getc() {
+        return this._contents.split("")[this._getcIndex++]
+    }
+
+}
