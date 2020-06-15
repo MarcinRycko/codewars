@@ -1,0 +1,7 @@
+function spinWords(str) {
+    let strArray = str.split(" ")
+    strArray.forEach((item, index) => {
+        item.length > 4 ? strArray[index] = strArray[index].split("").reverse().join("") : item;
+    })
+    return strArray.join(" ");
+}
